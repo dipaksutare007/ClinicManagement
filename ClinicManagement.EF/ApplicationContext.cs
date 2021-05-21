@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ClinicManagement.EF.Entity;
+using Microsoft.EntityFrameworkCore;
  
 using System;
 
@@ -11,6 +12,7 @@ namespace ClinicManagement.EF
 
         }
 
-        //public DbSet< MyProperty { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }

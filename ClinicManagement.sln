@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement", "ClinicManagement\ClinicManagement.csproj", "{8B8F2A09-B855-4E46-B9D8-36908242AFAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicManagement", "ClinicManagement\ClinicManagement.csproj", "{8B8F2A09-B855-4E46-B9D8-36908242AFAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement.IDAL", "ClinicManagement.IDAL\ClinicManagement.IDAL.csproj", "{AF693FDF-9D49-4463-99B6-08CF854FE424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicManagement.IDAL", "ClinicManagement.IDAL\ClinicManagement.IDAL.csproj", "{AF693FDF-9D49-4463-99B6-08CF854FE424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement.DAL", "ClinicManagement.DAL\ClinicManagement.DAL.csproj", "{EBF55F5A-0876-400D-9877-C0F5E61BC88A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicManagement.DAL", "ClinicManagement.DAL\ClinicManagement.DAL.csproj", "{EBF55F5A-0876-400D-9877-C0F5E61BC88A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement.EF", "ClinicManagement.EF\ClinicManagement.EF.csproj", "{CCD11D68-5EDC-4B51-9853-BEF65D17CD54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicManagement.EF", "ClinicManagement.EF\ClinicManagement.EF.csproj", "{CCD11D68-5EDC-4B51-9853-BEF65D17CD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagement.Api", "ClinicManagement.Api\ClinicManagement.Api.csproj", "{AAAAB0E7-675B-4E2A-A3C9-ED0BBF78E129}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CCD11D68-5EDC-4B51-9853-BEF65D17CD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD11D68-5EDC-4B51-9853-BEF65D17CD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD11D68-5EDC-4B51-9853-BEF65D17CD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAAB0E7-675B-4E2A-A3C9-ED0BBF78E129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAAB0E7-675B-4E2A-A3C9-ED0BBF78E129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAAB0E7-675B-4E2A-A3C9-ED0BBF78E129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAAB0E7-675B-4E2A-A3C9-ED0BBF78E129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
