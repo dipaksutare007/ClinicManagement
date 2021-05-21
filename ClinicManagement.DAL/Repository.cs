@@ -10,7 +10,7 @@ namespace ClinicManagement.DAL
     public class Repository<T> : IRepository<T> where T : class 
     {
         private DbContext ClinicDAL = null;
-        private DbSet<T> dbentity = null;
+        
         public void Add(T obj)
         {
             this.ClinicDAL.Set<T>().Add(obj);
