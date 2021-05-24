@@ -14,18 +14,21 @@ namespace ClinicManagement.Api.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
-        private readonly ClinicDAL _DAL = null;
+      //  private readonly ClinicDAL _DAL = null;
         public PatientController()
         {
             //this._DAL = new ClinicDAL();
         }
-         
 
-       // [HttpGet]
-        //public async Task<IEnumerable<Patient>> Get()
+
+        // [HttpGet]
+        //public  Task<Patient> Get()
         //{
-           
-           
+
+        //    using(var DAL= new ClinicDAL())
+        //    {
+        //        return  DAL.Patients.ToList();
+        //    }
         //}
     }
 }
