@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClinicManagement.DAL\ClinicManagement.DAL.csproj" />
     <ProjectReference Include="..\ClinicManagement.EF\ClinicManagement.EF.csproj" />
   </ItemGroup>
 

@@ -5,9 +5,9 @@ using System;
 
 namespace ClinicManagement.EF
 {
-    public class ApplicationContext : DbContext
+    public class ClinicDAL : DbContext
     {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+        public ClinicDAL(DbContextOptions<ClinicDAL> options) : base(options)
         {
 
         }

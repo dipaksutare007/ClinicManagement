@@ -26,9 +26,14 @@ namespace ClinicManagement.DAL
             return  ClinicDAL.Set<T>().Find(FindId);
         }
 
-        public IQueryable<T> GetAll()
+        //public IQueryable<T> GetAll()
+        //{
+        //     return ClinicDAL.Set<T>().AsNoTracking();
+        //}
+
+        public async Task<IEnumerable<T>> GetAll()
         {
-             return ClinicDAL.Set<T>().AsNoTracking();
+            return await ClinicDAL.Set<T>().ToListAsync();
         }
 
         public void Save()

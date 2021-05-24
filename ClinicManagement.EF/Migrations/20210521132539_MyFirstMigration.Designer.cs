@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClinicManagement.EF.Migrations
 {
-    [DbContext(typeof(ApplicationContext))]
+    [DbContext(typeof(ClinicDAL))]
     [Migration("20210521132539_MyFirstMigration")]
     partial class MyFirstMigration
     {

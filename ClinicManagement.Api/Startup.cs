@@ -35,8 +35,10 @@ namespace ClinicManagement.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicManagement.Api", Version = "v1" });
             });
 
-            services.AddDbContext<ApplicationContext>(opt => opt
-            .UseSqlServer("Server=NAUSHIK; Database=CDB;User Id=sa; Password=smart@123;"));
+            //services.AddDbContext<ApplicationContext>(opt => opt
+            //.UseSqlServer("Server=NAUSHIK; Database=CDB;User Id=sa; Password=smart@123;"));
+            services.AddDbContext<ClinicDAL>(opt => opt
+            .UseSqlServer("Server=DESKTOP-S74O0PP; Database=CDB;User Id=sa; Password=smart@123;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
