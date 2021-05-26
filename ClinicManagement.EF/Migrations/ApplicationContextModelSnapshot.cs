@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClinicManagement.EF.Migrations
 {
-    [DbContext(typeof(ClinicDAL))]
+    [DbContext(typeof(ClinicContext))]
     partial class ApplicationContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

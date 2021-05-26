@@ -1,4 +1,6 @@
+using ClinicManagement.DAL;
 using ClinicManagement.EF;
+using ClinicManagement.IDAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,8 +39,11 @@ namespace ClinicManagement.Api
 
             //services.AddDbContext<ApplicationContext>(opt => opt
             //.UseSqlServer("Server=NAUSHIK; Database=CDB;User Id=sa; Password=smart@123;"));
-            services.AddDbContext<ClinicDAL>(opt => opt
-            .UseSqlServer("Server=DESKTOP-S74O0PP; Database=CDB;User Id=sa; Password=smart@123;"));
+            //services.AddDbContext<ClinicDAL>(opt => opt
+            //.UseSqlServer("Server=DESKTOP-S74O0PP; Database=CDB;User Id=sa; Password=smart@123;"));
+            services.AddDbContext<ClinicContext>(item => item.UseSqlServer
+                                (Configuration.GetConnectionString("ClinicDBConnection")));
+            services.AddScoped<IPatientRepository, PatientRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
