@@ -25,12 +25,23 @@ namespace ClinicManagement.Api.Controllers
         [Route("Getpatient")]
         public async Task<IActionResult> Getpatient()
         {
-            var objPatients = await patientRepository.GetPatients();
-            if(objPatients==null)
+            try
             {
-                return NotFound();
+                var objPatients = await patientRepository.GetPatients();
+                if (objPatients == null)
+                {
+                    return NotFound();
+                }
+                return Ok(objPatients);
             }
-            return Ok(objPatients);
+            catch (Exception)
+            {
+
+                 return BadRequest();
+            }
+           
         }
+
+
     }
 }
