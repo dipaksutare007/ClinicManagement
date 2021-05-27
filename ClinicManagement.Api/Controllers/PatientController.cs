@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ClinicManagement.EF;
 using ClinicManagement.EF.Entity;
 using ClinicManagement.DAL;
+using ClinicManagement.IDAL;
 
 namespace ClinicManagement.Api.Controllers
 {
@@ -14,21 +15,33 @@ namespace ClinicManagement.Api.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
-      //  private readonly ClinicDAL _DAL = null;
-        public PatientController()
+        IPatientRepository patientRepository;
+        public PatientController(IPatientRepository _patientRepository)
         {
-            //this._DAL = new ClinicDAL();
+            patientRepository = _patientRepository;
+        }
+
+        [HttpGet]
+        [Route("Getpatient")]
+        public async Task<IActionResult> Getpatient()
+        {
+            try
+            {
+                var objPatients = await patientRepository.GetPatients();
+                if (objPatients == null)
+                {
+                    return NotFound();
+                }
+                return Ok(objPatients);
+            }
+            catch (Exception)
+            {
+
+                 return BadRequest();
+            }
+           
         }
 
 
-        // [HttpGet]
-        //public  Task<Patient> Get()
-        //{
-
-        //    using(var DAL= new ClinicDAL())
-        //    {
-        //        return  DAL.Patients.ToList();
-        //    }
-        //}
     }
 }
