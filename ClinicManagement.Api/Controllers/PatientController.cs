@@ -8,6 +8,7 @@ using ClinicManagement.EF;
 using ClinicManagement.EF.Entity;
 using ClinicManagement.DAL;
 using ClinicManagement.IDAL;
+using ClinicManagement.EF.ViewModel;
 
 namespace ClinicManagement.Api.Controllers
 {
@@ -22,8 +23,8 @@ namespace ClinicManagement.Api.Controllers
         }
 
         [HttpGet]
-        [Route("Getpatient")]
-        public async Task<IActionResult> Getpatient()
+        [Route("Getpatients")]
+        public async Task<IActionResult> Getpatients()
         {
             try
             {
@@ -42,6 +43,119 @@ namespace ClinicManagement.Api.Controllers
            
         }
 
+        [HttpGet]
+        [Route("Getcities")]
+        public async Task<IActionResult> GetCities()
+        {
+            try
+            {
+                var objcities = await patientRepository.GetCities();
+                if(objcities==null)
+                {
+                    return NotFound();
+                }
+                return Ok(objcities);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
+        [HttpGet]
+        [Route("getPatient")]
+        public async Task<IActionResult> Getpatient(int Patientid)
+        {
+            try
+            {
+                var objpatient = await patientRepository.GetPatients(Patientid);
+                if(objpatient==null)
+                {
+                    return NotFound();
+                }
+                return Ok(objpatient);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+                    
+            }
+        }
+        [HttpPost]
+        [Route("AddPatient")]
+        public async Task<IActionResult> AddPatient([FromBody] Patient patient)
+        {
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    var Patientid = await patientRepository.AddPatient(patient);
+                    if(Patientid > 0)
+                    {
+                        return Ok(Patientid);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdatePatient")]
+        public async Task<IActionResult> UpdatePatient([FromBody] Patient patient )
+        {
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    await patientRepository.UpdatePatient(patient);
+                    return Ok();
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        public async Task<IActionResult> DeletePatient([FromBody] int Patientid)
+        {
+            try
+            {
+                var cnt = await patientRepository.DeletePatient(Patientid);
+                if (cnt > 0)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception)
+            {
+
+                return NotFound();
+            }
+        }
 
     }
 }

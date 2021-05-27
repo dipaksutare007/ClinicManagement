@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ClinicManagement.EF.Entity;
 namespace ClinicManagement.EF.ViewModel
 {
     public class PatientViewModel
@@ -11,7 +11,7 @@ namespace ClinicManagement.EF.ViewModel
         public int Id { get; set; }
         public string Token { get; set; }
         public string Name { get; set; }
-        public int Sex { get; set; }
+        public Gender sex { get; set; }
         public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
@@ -24,14 +24,7 @@ namespace ClinicManagement.EF.ViewModel
         public int Age
         {
             get; set;
-            //get
-            //{
-            //    var now = DateTime.Today;
-            //    var age = now.Year - BirthDate.Year;
-            //    if (BirthDate > now.AddYears(-age)) age--;
-            //    return age;
-            //}
-
+          
         }
     }
 }
